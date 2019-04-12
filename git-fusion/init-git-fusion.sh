@@ -77,12 +77,18 @@ P4TICKET=`echo "$P4PASSWD"|/usr/bin/p4 login -a -p $P4USER|sed -r -e "s/Enter pa
 echo $P4TICKET
 P4="/usr/bin/p4 -u $P4USER -p $P4PORT -P $P4TICKET"
 
+if [ -f /etc/timezone ]; then
+  OLSONTZ=`cat /etc/timezone`
+else
+  OLSONTZ=${TZ:-Etc/UTC}
+fi
+
 echo yes|/opt/perforce/git-fusion/libexec/configure-git-fusion.sh -n \
     --super $P4USER \
     --superpassword "$P4PASSWD" \
     --gfp4password "$P4PASSWD" \
     --p4port $P4PORT \
-    --timezone ${TZ:-UTC} \
+    --timezone $OLSONTZ \
     --server remote \
     --id $NAME \
     --unknownuser unknown
