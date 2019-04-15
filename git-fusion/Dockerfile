@@ -30,7 +30,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ENV P4CONFIG=.p4config P4PORT=1666 P4USER=p4admin P4ROOT=/data NAME=gf
 
 VOLUME /data
-EXPOSE 22 1666
+EXPOSE 22
 
 # The configure script is not automated, since case sensitivity is still checked through a prompt. Fix.
 ADD ./configure-git-fusion.sh.patch /opt/perforce/git-fusion/libexec/configure-git-fusion.sh.patch
