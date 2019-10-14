@@ -1,7 +1,11 @@
 # Docker Perforce Images
 
-Perforce docker images inspired by Amit's [docker images](https://github.com/ambakshi/docker-perforce). The base images have all been switched to [baseimage docker](https://github.com/phusion/baseimage-docker) for proper zombie process handling and cron usage. 
+Perforce docker images inspired by:
+- Amit's [docker images](https://github.com/ambakshi/docker-perforce)
+- Tilander's [p4 images](https://github.com/jtilander/docker-p4)
+- Morita's [git-connector image](https://github.com/mmorita44/helix-git-connector)
 
+The base images have all been switched to [baseimage docker](https://github.com/phusion/baseimage-docker) for proper zombie process handling and cron usage.
 
 These images are also available on [docker hub](https://hub.docker.com/r/jtilander/)
 
